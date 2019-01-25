@@ -29,7 +29,8 @@
       divID : 'markers',
       width : 800,
       height : 600,
-      antialias : true
+      antialias : true,
+      background : '#efefef',
     });
 
     viewer.addObject(new ROS3D.Grid());
@@ -47,7 +48,7 @@
     var imClient = new ROS3D.InteractiveMarkerClient({
       ros : ros,
       tfClient : tfClient,
-      topic : '/basic_controls',
+      topic : '/control_markers',
       camera : viewer.camera,
       rootObject : viewer.selectableObjects
     });
@@ -64,7 +65,7 @@
 </head>
 
 <body onload="init()">
-  <h1>Simple Marker Example</h1>
+  <h1>Teleoperation UR5</h1>
   <div id="markers"></div>
 </body>
 </html>
